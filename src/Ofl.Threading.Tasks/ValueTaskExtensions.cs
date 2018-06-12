@@ -7,6 +7,6 @@ namespace Ofl.Threading.Tasks
     {
         public static ValueTask<T> FromResult<T>(T result) => new ValueTask<T>(result);
 
-        public static T RunInContext<T>(this ValueTask<T> task) => task.AsTask().RunInContext();
+        public static T RunInContext<T>(this in ValueTask<T> task) => task.AsTask().RunInContext();
     }
 }
